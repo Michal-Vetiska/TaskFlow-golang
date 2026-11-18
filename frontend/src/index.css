@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --surface: #f4f7f6;
+  --surface-raised: #ffffff;
+  --surface-muted: #e8efed;
+  --ink: #10231f;
+  --ink-muted: #4b635c;
+  --ink-subtle: #7a9089;
+  --line: #d5e0dc;
+  --accent: #0f766e;
+  --accent-soft: #ccfbf1;
+  --accent-foreground: #ecfdf5;
+  color-scheme: light;
+}
+
+.dark {
+  --surface: #0b1412;
+  --surface-raised: #12201c;
+  --surface-muted: #1a2b26;
+  --ink: #e8f2ef;
+  --ink-muted: #a7bfb7;
+  --ink-subtle: #6f8a82;
+  --line: #243833;
+  --accent: #2dd4bf;
+  --accent-soft: rgba(45, 212, 191, 0.12);
+  --accent-foreground: #042f2e;
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 55%),
+    var(--surface);
+  font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer utilities {
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--surface-muted) 25%,
+      color-mix(in srgb, var(--surface-raised) 70%, var(--surface-muted)) 50%,
+      var(--surface-muted) 75%
+    );
+    background-size: 200% 100%;
+  }
+}

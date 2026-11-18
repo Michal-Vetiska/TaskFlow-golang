@@ -1,0 +1,6 @@
+bin
+coverage.out
+coverage.html
+.git
+*.test
+.DS_Store
